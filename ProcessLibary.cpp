@@ -13,7 +13,7 @@ void AwaitProcess() {
         Process = GetProccessByName("RobloxPlayerBeta.exe");
         std::this_thread::sleep_for(std::chrono::microseconds(10));
     }
-    std::this_thread::sleep_for(std::chrono::seconds(15));
+    std::this_thread::sleep_for(std::chrono::seconds(20));
     TerminateProcess(Process,0);
 }
 

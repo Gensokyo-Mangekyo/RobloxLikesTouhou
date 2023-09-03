@@ -3,10 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import ctypes
-import os
-import sys
 
+driver = webdriver.Chrome()
 
 def EnterTextBoxWait(Id, text):
     element = wait.until(EC.presence_of_element_located((By.ID, Id))) #Ожидаем пока найдём id
@@ -15,42 +13,22 @@ def EnterTextBoxWait(Id, text):
 def ClickButtonById(Id):
     element = wait.until(EC.presence_of_element_located((By.ID, Id)))
     element.click()  #Кликаем
-script_path = os.path.dirname(os.path.abspath(sys.argv[0]))
-Process = ctypes.CDLL(script_path + '\Process.dll')  # Замените на имя вашей DLL
-driver = webdriver.Chrome()
-
 
 url = "https://www.roblox.com/login" 
 
-# Переход по URL
 driver.get(url)
 wait = WebDriverWait(driver, 10)  # Ожидаем максимум 10 секунд загрузки веб страницы
 
 #Начать цикл здесь
-EnterTextBoxWait("login-username", "Jumptwinge5540")
-EnterTextBoxWait("login-password", "cC9qnufj6CV7KzT")
+EnterTextBoxWait("login-username", "Rustcog0950")
+EnterTextBoxWait("login-password", "fY9BvmWt1g7jysN")
 ClickButtonById("login-button")
 url = "https://www.roblox.com/home"
 wait.until(EC.url_to_be(url)) #Ожидаем пока перекинет на новый url 
-RobloxGame = "https://www.roblox.com/games/13484061921/Eternal-Dream"
-driver.get(RobloxGame)
-wait.until(EC.url_to_be(RobloxGame)) #Ожидаем пока перекинет на новый url 
-element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "icon-favorite")))
-element.click() 
-element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "icon-common-play")))
-element.click() 
-Process.WaitProcessRoblox()
-element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "icon-like")))
-element.click() 
+
 element = wait.until(EC.presence_of_element_located((By.ID, "nav-settings")))
 element.click() 
 time.sleep(1)
 element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "logout-menu-item")))
-element.click()
+element.click() 
 time.sleep(1)
-url = "https://www.roblox.com/login"
-driver.get(url)
-wait.until(EC.url_to_be(url))
-
-while True:
-    time.sleep(1)
