@@ -27,8 +27,8 @@ driver.get(url)
 wait = WebDriverWait(driver, 10)  # Ожидаем максимум 10 секунд загрузки веб страницы
 
 #Начать цикл здесь
-EnterTextBoxWait("login-username", "Jumptwinge5540")
-EnterTextBoxWait("login-password", "cC9qnufj6CV7KzT")
+EnterTextBoxWait("login-username", "r1l3g7x4o7b4e2")
+EnterTextBoxWait("login-password", "s0qvdyemtc")
 ClickButtonById("login-button")
 url = "https://www.roblox.com/home"
 wait.until(EC.url_to_be(url)) #Ожидаем пока перекинет на новый url 
